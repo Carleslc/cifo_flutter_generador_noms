@@ -20,7 +20,7 @@ try {
     if (flutterVersionCode == null) {
         flutterVersionCode = flutter.versionCode
     }
-} catch (MissingPropertyException e) {
+} catch (Exception e) { /* MissingPropertyException */
     flutterVersionCode = "1"
 }
 
@@ -29,7 +29,7 @@ try {
     if (flutterVersionName == null) {
         flutterVersionName = flutter.versionName
     }
-} catch (MissingPropertyException e) {
+} catch (Exception e) { /* MissingPropertyException */
     flutterVersionName = "1.0"
 }
 

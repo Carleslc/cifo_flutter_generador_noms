@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:random_name_generator/random_name_generator.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:random_name_generator/random_name_generator.dart';
 
 import '../extensions/zone_extension.dart';
 

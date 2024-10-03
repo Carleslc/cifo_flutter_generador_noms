@@ -2,6 +2,17 @@
 
 **Repositori d'aplicacions: [cifo_flutter](https://github.com/Carleslc/cifo_flutter)**
 
+<!-- toc -->
+
+- [Instal·lació](#instal%C2%B7lacio)
+- [Estructura de l'aplicació](#estructura-de-laplicacio)
+- [Notes del desenvolupament](#notes-del-desenvolupament)
+- [Imatges](#imatges)
+- [Recursos](#recursos)
+- [Llibreries externes](#llibreries-externes)
+
+<!-- tocstop -->
+
 ## Activitat d'aprenentatge 1.2 - Escriu la teva primera App en Flutter
 
 Aplicació per generar noms de persones a l'atzar.
@@ -48,6 +59,26 @@ flutter pub get
 
 4. Executar l'aplicació amb `flutter run` o desde l'IDE.
 
+## Estructura de l'aplicació
+
+```
+lib
+├── extensions
+│   └── zone_extension.dart
+├── main.dart
+├── screens
+│   └── people_list.dart
+├── settings.dart
+└── widgets
+    └── zone_selector.dart
+```
+
+S'ha organitzat el codi afegint la carpeta `screens` amb el fitxer `people_list.dart` que conté el widget `PeopleList` amb la llista de noms, una carpeta `widgets` per altres widgets propis com el selector de zona `ZoneSelector` al fitxer `zone_selector.dart` i una carpeta `extensions` per utilitats com la extensió `zone_extension.dart` que extén la clase `Zone` per afegir un getter `name` que tradueix l'id de la zona al seu nom en català.
+
+Al fitxer `main.dart` es crea el layout principal de l'aplicació i es gestiona la zona que es passa al `ZoneSelector` i `PeopleList`.
+
+El fitxer `settings.dart` és una classe amb mètodes estàtics per gestionar el guardat de la zona amb [`shared_preferences`](https://pub.dev/packages/shared_preferences).
+
 ## Notes del desenvolupament
 
 Primer vaig buscar diferents recursos per veure exemples de widgets i la documentació dels [widgets Material](https://docs.flutter.dev/ui/widgets/material).
@@ -71,24 +102,6 @@ En un primer moment vaig afegir un botó [`ElevatedButton.icon`](https://api.flu
 També he investigat altres widgets similars pels desplegables com [`DropdownButton`](https://api.flutter.dev/flutter/material/DropdownButton-class.html), que sembla estar en desús en favor de l'utilitzat [`DropdownMenu`](https://api.flutter.dev/flutter/material/DropdownMenu-class.html) per Material 3, i [`MenuAnchor`](https://api.flutter.dev/flutter/material/MenuAnchor-class.html) que finalment no he utilitzat.
 
 He afegit un [`Tooltip`](https://api.flutter.dev/flutter/material/Tooltip-class.html) amb un missatge d'ajuda pel desplegable, però només és visible al web.
-
-```
-lib
-├── extensions
-│   └── zone_extension.dart
-├── main.dart
-├── screens
-│   └── people_list.dart
-├── settings.dart
-└── widgets
-    └── zone_selector.dart
-```
-
-S'ha organitzat el codi afegint la carpeta `screens` amb el fitxer `people_list.dart` que conté el widget `PeopleList` amb la llista de noms, una carpeta `widgets` per altres widgets propis com el selector de zona `ZoneSelector` al fitxer `zone_selector.dart` i una carpeta `extensions` per utilitats com la extensió `zone_extension.dart` que extén la clase `Zone` per afegir un getter `name` que tradueix l'id de la zona al seu nom en català.
-
-Al fitxer `main.dart` es crea el layout principal de l'aplicació i es gestiona la zona que es passa al `ZoneSelector` i `PeopleList`.
-
-El fitxer `settings.dart` és una classe amb mètodes estàtics per gestionar el guardat de la zona amb [`shared_preferences`](https://pub.dev/packages/shared_preferences).
 
 Finalment he investigat una mica com [testejar](https://docs.flutter.dev/testing/overview) l'aplicació amb Flutter i he modificat el test per defecte `test/widget_test.dart` per provar la llista i el desplegable.
 

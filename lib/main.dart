@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:material_symbols_icons/symbols.dart';
+
 import 'package:random_name_generator/random_name_generator.dart';
 
-import 'settings.dart';
 import 'screens/people_list.dart';
+import 'settings.dart';
 import 'widgets/zone_selector.dart';
 
 void main() {

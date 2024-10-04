@@ -4,8 +4,8 @@
 
 <!-- toc -->
 
-- [Instal·lació](#instal%C2%B7lacio)
-- [Estructura de l'aplicació](#estructura-de-laplicacio)
+- [Instal·lació](#installació)
+- [Estructura de l'aplicació](#estructura-de-laplicació)
 - [Notes del desenvolupament](#notes-del-desenvolupament)
 - [Imatges](#imatges)
 - [Recursos](#recursos)
